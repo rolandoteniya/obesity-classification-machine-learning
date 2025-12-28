@@ -2,37 +2,33 @@
 > **Applied AI Project | University of Liverpool**
 
 ## 📊 Project Overview
-This project develops a predictive machine learning model for a medical organization to classify patients' obesity levels based on eating habits, physical conditions, and demographic data. The goal was to build a robust diagnostic tool that moves beyond simple BMI calculations to consider a holistic patient profile.
+This project develops a predictive machine learning model for a medical organization to classify patients' obesity levels based on eating habits, physical conditions, and demographic data. 
 
 ### **The Result:**
-After a systematic evaluation of multiple supervised learning algorithms, the final **Support Vector Machine (SVM)** model achieved an accuracy of **95.97%** on unseen test data, misclassifying only 17 out of 422 cases.
+After conducting a systematic "bake-off" between six different supervised learning architectures, the final **Support Vector Machine (SVM)** model achieved an accuracy of **95.97%** on unseen test data.
 
 ---
 
-### **📄 [View Full Project Report (PDF)](./Assignment_1_final.pdf)**
+### **📄 [View Full Project Report (PDF)](./Obesity_Classification_Report.pdf)**
 
 ---
 
-## 🛠️ Tech Stack
-* **Machine Learning:** `Scikit-learn` (SVM, Random Forest, Decision Trees)
-* **Data Manipulation:** `Pandas`, `NumPy`
-* **Visualization:** `Seaborn`, `Matplotlib`
-* **Techniques:** Stratified 5-Fold Cross-Validation, GridSearchCV for Hyperparameter Tuning.
+## 🛠️ Tech Stack & Models Evaluated
+I implemented and benchmarked a suite of supervised learning algorithms to identify the most robust classifier:
+* **Linear Models:** Logistic Regression
+* **Instance-based:** k-Nearest Neighbours (kNN)
+* **Probabilistic:** Naive Bayes
+* **Tree-based:** Decision Trees, Random Forest
+* **Kernel-based:** Support Vector Machine (SVM) — *Top Performer*
 
-
+**Libraries:** `Scikit-learn`, `Pandas`, `NumPy`, `Seaborn`, `Matplotlib`.
 
 ## 🧪 Systematic Pipeline & Methodology
-1. **Data Management:** Performed an 80:20 train-test split and handled categorical encoding for lifestyle features (e.g., frequency of vegetable consumption, physical activity).
-2. **Exploratory Data Analysis (EDA):** Utilized correlation matrices and distribution plots to identify key predictors of obesity levels.
-3. **Model Selection "Bake-off":** Ran multiple baseline models without tuning to establish a performance floor.
-4. **Optimization:** Conducted **Grid Search CV** to tune hyperparameters, ensuring the model generalized well and didn't overfit the training data.
-5. **Robust Evaluation:** Prioritized the **Confusion Matrix** to ensure misclassifications were only occurring between "adjacent" categories (e.g., Overweight Level I vs. Level II), which is clinically acceptable compared to major errors.
+1. **Data Management:** Performed an 80:20 train-test split and handled categorical encoding for multi-dimensional lifestyle features.
+2. **Model Benchmarking:** Evaluated 6 different algorithms to establish baseline performance metrics across Accuracy, Precision, Recall, and F1-Score.
+3. **Optimization:** Conducted **GridSearchCV** for hyperparameter tuning and utilized **Stratified 5-Fold Cross-Validation** to ensure model stability and prevent overfitting.
+4. **Clinical Validation:** Analyzed the **Confusion Matrix** to ensure that any misclassifications occurred only between "adjacent" categories, maintaining high clinical reliability.
 
-## 📈 Key Results
-* **Best Model:** Support Vector Machine (SVM)
-* **Final Test Accuracy:** 95.97%
-* **Feature Insight:** High correlation found between physical activity levels, age, and obesity types, validating the multi-dimensional approach to health classification.
-
-## ⚙️ Professional Reflection & Growth
-* **Feature Selection:** This project highlighted the importance of feature scaling, particularly for distance-based algorithms like SVM.
-* **Evaluation Metrics:** While accuracy was high, I focused on **Precision and Recall** for each of the 7 classes to ensure the model wasn't biased toward the majority class.
+## 📈 Final Model Performance (SVM)
+* **Test Accuracy:** 95.97%
+* **Robustness:** Successfully categorized 7 distinct obesity levels with minimal marginal error.
